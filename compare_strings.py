@@ -1,8 +1,13 @@
 import re
 def compare_strings(string1, string2):
-    
+
   string1 = string1.lower().strip()
   string2 = string2.lower().strip()
+
+  punctuation = r"[.?!,;:\-']"
+  string1 = re.sub(punctuation, r"", string1)
+  string2 = re.sub(punctuation, r"", string2)
+
 
 
 print(compare_strings("Have a Great Day!", "Have a great day?")) # True
